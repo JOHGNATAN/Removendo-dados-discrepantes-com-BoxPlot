@@ -12,15 +12,10 @@ plt.rc('figure', figsize = (14,6))
 
 dados= pd.read_csv("C:/Users/JOHGNATAN/OneDrive/Área de Trabalho/Python_Data_Science/base_de_dados_diversos/aluguel.csv", sep = ';')
 
-
-
 dados.boxplot(['Valor'])
-
-
 
 valor = dados['Valor']
 valor
-
 
 Q1 = valor.quantile(.25)
 Q3 = valor.quantile(.75)
@@ -36,7 +31,6 @@ limite_superior = Q3 + 1.5 * IIQ
 selecao = (valor >= limite_inferior) & (valor <= limite_superior)
 dados_new = dados[selecao]
 
-
 dados_new.boxplot(['Valor'])
 
 
@@ -49,25 +43,19 @@ dados.hist(['Valor'])
 
 dados_new.hist(['Valor'])
 
-
-
 # # Identificando e Removendo Outliers por Grupo
 
 
 dados= pd.read_csv('C:/Users/JOHGNATAN/OneDrive/Área de Trabalho/Python_Data_Science/base_de_dados_diversos/aluguel_amostra.csv', sep = ';')
 dados
 
-
 dados.boxplot(['Valor'], by = ['Tipo'])
-
 
 
 grupo_tipo = dados.groupby('Tipo')['Valor']
 type(grupo_tipo)
 
-
 grupo_tipo.groups
-
 
 Q1 = grupo_tipo.quantile(.25)
 Q3 = grupo_tipo.quantile(.75)
@@ -90,8 +78,6 @@ for tipo in grupo_tipo.groups.keys():
     
     dados_new = pd.concat([dados_new, dados_select])
     
-
-
 dados_new.boxplot(['Valor'], by = ['Tipo'])
 
 
@@ -107,14 +93,12 @@ dados = pd.read_csv("C:/Users/JOHGNATAN/OneDrive/Área de Trabalho/Python_Data_S
 
 dados.head()
 
-
 area = plt.figure()
 
 g1 = area.add_subplot(2,2,1)
 g2 = area.add_subplot(2,2,2)
 g3 = area.add_subplot(2,2,3)
 g4 = area.add_subplot(2,2,4)
-
 
 
 g1.scatter(dados['Valor'], dados.Area)
