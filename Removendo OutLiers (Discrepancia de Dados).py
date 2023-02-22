@@ -121,7 +121,6 @@ valores = grupo.mean().values
 g4.bar(label, valores)
 g4.set_title('Valor médio por Tipo')
 
-
 # Ao executarmos nosso código teremos quatro tipos diferentes de gráficos na mesma área, 
 # sendo o primeiro um gráfico de dispersão, o segundo um histograma, o terceiro uma amostra da variável Valor, 
 # e por fim o tradicional gráfico em barras que representa o valor médio por tipos de imóvel.
